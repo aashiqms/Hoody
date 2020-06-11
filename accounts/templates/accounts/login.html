@@ -1,0 +1,27 @@
+{% extends 'index.html' %}
+<link href="https://fonts.googleapis.com/css2?family=Metal+Mania&family=Montserrat:ital,wght@1,800&display=swap" rel="stylesheet">
+{% load static %}
+{% block login %}
+   <div class="container">
+   <h1 style="margin: 20px;font-family: 'Metal Mania', cursive;">Fit Life</h1>
+    <form method="POST">
+    {% csrf_token %}
+{{ form.as_p }}
+     <button class="btn btn-outline-info" type="submit">Login</button>
+    </form>
+       <hr>
+   <div class="border-top pt-3">
+            <small class="text-muted">
+                Need An Account? <a class="ml-2" href="{% url 'accounts:register' %}">Sign Up Now</a>
+            </small>
+        </div>
+   </div>
+    <style>
+    .container{
+        justify-content: center;
+        text-align: center;
+        align-content: center;
+        margin-top: 10%;
+    }
+    </style>
+{% endblock %}
